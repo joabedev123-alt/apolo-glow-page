@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import WhatsAppIcon from "./WhatsAppIcon";
 
 const CTASection = () => {
   return (
@@ -16,10 +16,10 @@ const CTASection = () => {
           <p className="text-lg text-muted-foreground mb-10">
             Entre em contato e leve sua marca para outro nível.
           </p>
-          <a href="https://wa.me/5511988906646" target="_blank" rel="noopener noreferrer">
-            <Button variant="glow" size="xl">
+          <a href="https://wa.me/5511988906646" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+            <Button variant="glow" size="xl" className="w-full sm:w-auto flex items-center justify-center gap-2">
+              <WhatsAppIcon size={20} />
               Falar no WhatsApp
-              <ArrowRight size={20} />
             </Button>
           </a>
         </div>

@@ -1,4 +1,5 @@
 import { Instagram, Phone, MapPin } from "lucide-react";
+import WhatsAppIcon from "./WhatsAppIcon";
 
 const Footer = () => {
   return (
@@ -8,9 +9,8 @@ const Footer = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-3 gap-12">
           <div>
-            <a href="#inicio" className="font-heading text-2xl font-bold tracking-tight">
-              <span className="text-foreground">APOLO</span>
-              <span className="text-primary"> ARTES</span>
+            <a href="#inicio" className="flex items-center">
+              <img src="/Apolo artes-Photoroom.png" alt="Apolo Artes" className="h-24 md:h-48" />
             </a>
             <p className="text-muted-foreground text-sm mt-4 max-w-xs">
               Transformamos ideias em experiências que marcam presença.
@@ -41,7 +41,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                <Phone size={14} />
+                <WhatsAppIcon size={14} />
                 (11) 98890-6646
               </a>
               <a
@@ -55,6 +55,7 @@ const Footer = () => {
               </a>
               <div className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin size={14} className="mt-0.5 flex-shrink-0" />
+                <img src="/Apolo artes-Photoroom.png" alt="Apolo Artes" className="h-6 ml-2" />
                 <span>Rua General Furtado do Nascimento, 740 – 4º andar, Alto de Pinheiros – São Paulo/SP</span>
               </div>
             </div>

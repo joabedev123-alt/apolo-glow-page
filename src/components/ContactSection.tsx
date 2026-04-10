@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { MapPin, Phone, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import WhatsAppIcon from "./WhatsAppIcon";
 
 const ContactSection = () => {
   const [visible, setVisible] = useState(false);
@@ -42,7 +43,7 @@ const ContactSection = () => {
               className="flex items-center gap-3 group"
             >
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <Phone className="text-primary" size={18} />
+                <WhatsAppIcon className="text-primary" size={18} />
               </div>
               <span className="text-foreground group-hover:text-primary transition-colors font-medium">
                 (11) 98890-6646
@@ -80,7 +81,8 @@ const ContactSection = () => {
             </div>
 
             <a href="https://wa.me/5511988906646" target="_blank" rel="noopener noreferrer">
-              <Button variant="glow" size="lg" className="w-full">
+              <Button variant="glow" size="lg" className="w-full flex items-center justify-center gap-2">
+                <WhatsAppIcon size={20} />
                 Falar no WhatsApp
               </Button>
             </a>

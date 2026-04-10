@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import WhatsAppIcon from "./WhatsAppIcon";
+
 
 const navLinks = [
   { label: "Início", href: "#inicio" },
@@ -12,10 +14,21 @@ const navLinks = [
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [show, setShow] = useState(true);
+  const lastScrollY = useRef(0);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      setScrolled(currentY > 50);
+      if (currentY > lastScrollY.current && currentY > 50) {
+        setShow(false);
+      } else {
+        setShow(true);
+      }
+      lastScrollY.current = currentY;
+    };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -24,12 +37,11 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled ? "bg-background/90 backdrop-blur-lg border-b border-border" : "bg-transparent"
-      }`}
+      } ${show ? "translate-y-0" : "-translate-y-full"} transition-transform duration-300`}
     >
-      <div className="container mx-auto flex items-center justify-between h-20 px-4">
-        <a href="#inicio" className="font-heading text-2xl font-bold tracking-tight">
-          <span className="text-foreground">APOLO</span>
-          <span className="text-primary"> ARTES</span>
+      <div className="container mx-auto flex items-center justify-between h-24 md:h-48 px-4">
+        <a href="#inicio" className="flex items-center">
+          <img src="/Apolo artes-Photoroom.png" alt="Apolo Artes" className="h-12 md:h-20" />
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
@@ -46,7 +58,8 @@ const Header = () => {
 
         <div className="hidden md:block">
           <a href="https://wa.me/5511988906646" target="_blank" rel="noopener noreferrer">
-            <Button variant="glow" size="lg">
+            <Button variant="glow" size="lg" className="flex items-center gap-2">
+              <WhatsAppIcon size={18} />
               Solicitar Orçamento
             </Button>
           </a>
@@ -74,7 +87,8 @@ const Header = () => {
               </a>
             ))}
             <a href="https://wa.me/5511988906646" target="_blank" rel="noopener noreferrer">
-              <Button variant="glow" size="lg" className="w-full mt-2">
+              <Button variant="glow" size="lg" className="w-full mt-2 flex items-center justify-center gap-2">
+                <WhatsAppIcon size={18} />
                 Solicitar Orçamento
               </Button>
             </a>
