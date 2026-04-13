@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { MapPin, Phone, Instagram } from "lucide-react";
+import { MapPin, Instagram, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppIcon from "./WhatsAppIcon";
 
@@ -29,7 +29,7 @@ const ContactSection = () => {
           </h2>
         </div>
 
-        <div className={`max-w-3xl mx-auto grid md:grid-cols-2 gap-8 ${visible ? "animate-fade-up" : "opacity-0"}`}>
+        <div className={`max-w-3xl mx-auto grid md:grid-cols-2 gap-6 md:gap-8 ${visible ? "animate-fade-up" : "opacity-0"}`}>
           <div className="space-y-8">
             <div>
               <p className="text-sm text-muted-foreground mb-1">Atendimento Comercial</p>
@@ -61,6 +61,18 @@ const ContactSection = () => {
               </div>
               <span className="text-foreground group-hover:text-primary transition-colors font-medium">
                 @apolooartes
+              </span>
+            </a>
+
+            <a
+              href="mailto:Fabiana.jesus@apoloartes.com.br"
+              className="flex items-center gap-3 group"
+            >
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <Mail className="text-primary" size={18} />
+              </div>
+              <span className="text-foreground group-hover:text-primary transition-colors font-medium">
+                Fabiana.jesus@apoloartes.com.br
               </span>
             </a>
           </div>

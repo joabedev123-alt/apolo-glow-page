@@ -1,4 +1,4 @@
-import { Instagram, Phone, MapPin } from "lucide-react";
+import { Instagram, MapPin, Mail } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 const Footer = () => {
@@ -60,6 +60,13 @@ const Footer = () => {
               >
                 <Instagram size={14} />
                 @apolooartes
+              </a>
+              <a
+                href="mailto:Fabiana.jesus@apoloartes.com.br"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Mail size={14} />
+                Fabiana.jesus@apoloartes.com.br
               </a>
               <div className="flex flex-col items-center md:items-start gap-2 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
