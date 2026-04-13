@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12">
           <div>
             <a href="#inicio" className="flex items-center">
-              <img src="/Apolo artes-Photoroom.png" alt="Apolo Artes" className="h-24 md:h-48" />
+              <img src="/Apolo artes-Photoroom.png" alt="Logo Apolo Artes" loading="lazy" className="h-24 md:h-48" />
             </a>
             <p className="text-muted-foreground text-sm mt-4 max-w-xs">
               Transformamos ideias em experiências que marcam presença.
@@ -29,6 +29,14 @@ const Footer = () => {
                   {label}
                 </a>
               ))}
+              <a
+                href="https://camaly.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors mt-2"
+              >
+                Produzida com 🧡 por CAMALY
+              </a>
             </nav>
           </div>
 
@@ -55,7 +63,7 @@ const Footer = () => {
               </a>
               <div className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin size={14} className="mt-0.5 flex-shrink-0" />
-                <img src="/Apolo artes-Photoroom.png" alt="Apolo Artes" className="h-6 ml-2" />
+                <img src="/Apolo artes-Photoroom.png" alt="Logo Apolo Artes" loading="lazy" className="h-6 ml-2" />
                 <span>Rua General Furtado do Nascimento, 740 – 4º andar, Alto de Pinheiros – São Paulo/SP</span>
               </div>
             </div>

@@ -41,7 +41,7 @@ const Header = () => {
     >
       <div className="container mx-auto flex items-center justify-between h-24 md:h-48 px-4">
         <a href="#inicio" className="flex items-center">
-          <img src="/Apolo artes-Photoroom.png" alt="Apolo Artes" className="h-12 md:h-20" />
+          <img src="/Apolo artes-Photoroom.png" alt="Logo Apolo Artes" loading="lazy" className="h-12 md:h-20" />
         </a>
 
         <nav className="hidden md:flex items-center gap-8">

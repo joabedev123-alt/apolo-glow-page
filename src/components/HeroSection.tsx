@@ -67,7 +67,12 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="w-full md:w-1/2 flex justify-center md:justify-end p-4 order-1 md:order-2">
-          <img src={heroBg} alt="Apolo Artes" className="max-w-[80%] md:max-w-full h-auto object-contain" />
+          <img 
+            src={heroBg} 
+            alt="Destaque de Estande Apolo Artes" 
+            fetchPriority="high"
+            className="max-w-[80%] md:max-w-full h-auto object-contain" 
+          />
         </div>
       </div>
 
