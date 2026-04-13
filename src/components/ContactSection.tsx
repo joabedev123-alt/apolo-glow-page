@@ -17,13 +17,13 @@ const ContactSection = () => {
   }, []);
 
   return (
-    <section id="contato" ref={ref} className="py-24 md:py-32">
+    <section id="contato" ref={ref} className="py-20 md:py-32">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <p className="text-primary font-heading text-sm font-semibold tracking-[0.2em] uppercase mb-4">
             Contato
           </p>
-          <h2 className="font-heading text-3xl md:text-5xl font-bold">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold">
             Vamos conversar sobre seu{" "}
             <span className="gradient-text">projeto</span>
           </h2>

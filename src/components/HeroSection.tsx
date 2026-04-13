@@ -5,7 +5,7 @@ import heroBg from "@/assets/Apolo artes 01.jpeg";
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-28">
       {/* Background effects */}
 
       
@@ -36,11 +36,11 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative z-10 gap-8 md:gap-0">
         <div className="w-full md:w-1/2 p-4 text-center md:text-left order-2 md:order-1">
           <div className="max-w-4xl mx-auto">
-            <p className="animate-fade-up text-primary font-heading text-[10px] md:text-base font-semibold tracking-[0.3em] uppercase mb-4 md:mb-6">
+            <p className="animate-fade-up text-primary font-heading text-xs md:text-base font-semibold tracking-[0.3em] uppercase mb-4 md:mb-6">
               Estandes · Cenografia · Ativações
             </p>
 
-            <h1 className="animate-fade-up-delay-1 font-heading text-3xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 md:mb-8">
+            <h1 className="animate-fade-up-delay-1 font-heading text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 md:mb-8">
               Transformamos ideias em{" "}
               <span className="gradient-text">experiências</span>{" "}
               que marcam presença
@@ -53,7 +53,7 @@ const HeroSection = () => {
             <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
               <a href="https://wa.me/5511988906646" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button variant="glow" size="xl" className="w-full sm:w-auto flex items-center justify-center gap-2">
-                  <WhatsAppIcon size={20} />
+                  <WhatsAppIcon size={22} />
                   Solicitar Orçamento
                 </Button>
               </a>

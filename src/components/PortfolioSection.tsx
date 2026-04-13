@@ -29,13 +29,13 @@ const PortfolioSection = () => {
   }, []);
 
   return (
-    <section id="projetos" ref={ref} className="py-24 md:py-32">
+    <section id="projetos" ref={ref} className="py-20 md:py-32">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <p className="text-primary font-heading text-sm font-semibold tracking-[0.2em] uppercase mb-4">
             Portfólio
           </p>
-          <h2 className="font-heading text-3xl md:text-5xl font-bold">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold">
             Projetos que{" "}
             <span className="gradient-text">impressionam</span>
           </h2>

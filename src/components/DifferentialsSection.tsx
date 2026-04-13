@@ -23,14 +23,14 @@ const DifferentialsSection = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-32 relative">
+    <section ref={ref} className="py-20 md:py-32 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <p className="text-primary font-heading text-sm font-semibold tracking-[0.2em] uppercase mb-4">
             Por Que Nos Escolher
           </p>
-          <h2 className="font-heading text-3xl md:text-5xl font-bold">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold">
             Impacto visual que{" "}
             <span className="gradient-text">vende por você</span>
           </h2>

@@ -7,19 +7,19 @@ const Footer = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-primary/[0.02] to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-3 gap-12">
-          <div>
+        <div className="grid md:grid-cols-3 gap-12 text-center md:text-left">
+          <div className="flex flex-col items-center md:items-start">
             <a href="#inicio" className="flex items-center">
               <img src="/Apolo artes-Photoroom.png" alt="Logo Apolo Artes" loading="lazy" className="h-24 md:h-48" />
             </a>
-            <p className="text-muted-foreground text-sm mt-4 max-w-xs">
+            <p className="text-muted-foreground text-sm mt-4 max-w-xs mx-auto md:mx-0">
               Transformamos ideias em experiências que marcam presença.
             </p>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="font-heading font-bold text-foreground mb-4">Links Rápidos</h4>
-            <nav className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-2 items-center md:items-start">
               {["Início", "Serviços", "Projetos", "Sobre", "Contato"].map((label) => (
                 <a
                   key={label}
@@ -40,9 +40,9 @@ const Footer = () => {
             </nav>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="font-heading font-bold text-foreground mb-4">Contato</h4>
-            <div className="space-y-3">
+            <div className="space-y-3 flex flex-col items-center md:items-start">
               <a
                 href="https://wa.me/5511988906646"
                 target="_blank"
@@ -61,9 +61,11 @@ const Footer = () => {
                 <Instagram size={14} />
                 @apolooartes
               </a>
-              <div className="flex items-start gap-2 text-sm text-muted-foreground">
-                <MapPin size={14} className="mt-0.5 flex-shrink-0" />
-                <img src="/Apolo artes-Photoroom.png" alt="Logo Apolo Artes" loading="lazy" className="h-6 ml-2" />
+              <div className="flex flex-col items-center md:items-start gap-2 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <MapPin size={14} className="flex-shrink-0" />
+                  <img src="/Apolo artes-Photoroom.png" alt="Logo Apolo Artes" loading="lazy" className="h-6" />
+                </div>
                 <span>Rua General Furtado do Nascimento, 740 – 4º andar, Alto de Pinheiros – São Paulo/SP</span>
               </div>
             </div>

@@ -21,12 +21,15 @@ const Header = () => {
   useEffect(() => {
     const onScroll = () => {
       const currentY = window.scrollY;
-      setScrolled(currentY > 50);
-      if (currentY > lastScrollY.current && currentY > 50) {
-        setShow(false);
-      } else {
+      setScrolled(currentY > 20);
+      
+      // Only show when at the very top
+      if (currentY <= 10) {
         setShow(true);
+      } else {
+        setShow(false);
       }
+      
       lastScrollY.current = currentY;
     };
     window.addEventListener("scroll", onScroll);
@@ -39,9 +42,9 @@ const Header = () => {
         scrolled ? "bg-background/90 backdrop-blur-lg border-b border-border" : "bg-transparent"
       } ${show ? "translate-y-0" : "-translate-y-full"} transition-transform duration-300`}
     >
-      <div className="container mx-auto flex items-center justify-between h-24 md:h-48 px-4">
+      <div className="container mx-auto flex items-center justify-between h-20 md:h-28 px-4">
         <a href="#inicio" className="flex items-center">
-          <img src="/Apolo artes-Photoroom.png" alt="Logo Apolo Artes" loading="lazy" className="h-12 md:h-20" />
+          <img src="/Apolo artes-Photoroom.png" alt="Logo Apolo Artes" loading="lazy" className="h-14 md:h-20" />
         </a>
 
         <nav className="hidden md:flex items-center gap-8">

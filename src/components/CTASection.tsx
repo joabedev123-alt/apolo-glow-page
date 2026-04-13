@@ -4,7 +4,7 @@ import apoloArte03 from "../assets/Apolo artes 03.jpeg";
 
 const CTASection = () => {
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+    <section className="py-20 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-cta" />
       <div className="absolute inset-0 border-y border-primary/10" />
 
@@ -23,7 +23,7 @@ const CTASection = () => {
           </div>
           
           <div className="max-w-2xl text-center md:text-center md:ml-auto animate-fade-up-delay-1 flex flex-col items-center md:items-center">
-            <h2 className="font-heading text-3xl md:text-5xl font-bold mb-6 whitespace-nowrap">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               Seu projeto merece se{" "}
               <span className="gradient-text">destacar</span>
             </h2>

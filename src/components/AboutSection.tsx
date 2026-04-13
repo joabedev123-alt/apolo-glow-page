@@ -14,14 +14,14 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section id="sobre" ref={ref} className="py-24 md:py-32 relative">
+    <section id="sobre" ref={ref} className="py-20 md:py-32 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent" />
       <div className="container mx-auto px-4 relative z-10">
         <div className={`max-w-3xl mx-auto text-center ${visible ? "animate-fade-up" : "opacity-0"}`}>
           <p className="text-primary font-heading text-sm font-semibold tracking-[0.2em] uppercase mb-4">
             Sobre Nós
           </p>
-          <h2 className="font-heading text-3xl md:text-5xl font-bold mb-8">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold mb-8">
             Sua marca no centro das{" "}
             <span className="gradient-text">atenções</span>
           </h2>

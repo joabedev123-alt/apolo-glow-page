@@ -33,13 +33,13 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section id="servicos" ref={ref} className="py-24 md:py-32 relative">
+    <section id="servicos" ref={ref} className="py-20 md:py-32 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <p className="text-primary font-heading text-sm font-semibold tracking-[0.2em] uppercase mb-4">
             Nossos Serviços
           </p>
-          <h2 className="font-heading text-3xl md:text-5xl font-bold">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold">
             Criamos experiências, não apenas{" "}
             <span className="gradient-text">estruturas</span>
           </h2>
