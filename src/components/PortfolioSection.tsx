@@ -112,24 +112,12 @@ const ProjectCard = ({ project }: { project: Project }) => {
             loading="lazy"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
 
           <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="p-2 bg-black/40 backdrop-blur-md rounded-full border border-white/20">
               <Maximize2 className="w-4 h-4 text-white" />
             </div>
-          </div>
-
-          <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-            <p className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-1">
-              PROJETO {project.id}
-            </p>
-            <h3 className="font-heading text-lg font-bold text-foreground capitalize">
-              {project.folderName.toLowerCase()}
-            </h3>
-            <p className="text-white/60 text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              {project.images.length} fotos
-            </p>
           </div>
         </div>
       </DialogTrigger>
