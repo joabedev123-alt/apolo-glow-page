@@ -40,7 +40,7 @@ const HeroSection = () => {
               Estandes · Cenografia · Ativações
             </p>
 
-            <h1 className="animate-fade-up-delay-1 font-heading text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 md:mb-8">
+            <h1 className="animate-fade-up-delay-1 font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 md:mb-8">
               Transformamos ideias em{" "}
               <span className="gradient-text">experiências</span>{" "}
               que marcam presença
@@ -71,7 +71,7 @@ const HeroSection = () => {
             src={heroBg} 
             alt="Destaque de Estande Apolo Artes" 
             fetchPriority="high"
-            className="max-w-[80%] md:max-w-full h-auto object-contain" 
+            className="max-w-full md:max-w-full h-auto object-contain" 
           />
         </div>
       </div>

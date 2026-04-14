@@ -1,12 +1,4 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import Autoplay from "embla-carousel-autoplay";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import {
   Dialog,
   DialogContent,
@@ -87,11 +79,69 @@ const CATEGORIES = [
 ];
 // ─────────────────────────────────────────────────────────────────────────────
 
+const ProjectSquadron = ({ images }: { images: string[] }) => {
+  const count = images.length;
+
+  if (count === 1) {
+    return (
+      <img
+        src={images[0]}
+        alt="Projeto"
+        loading="lazy"
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+      />
+    );
+  }
+
+  if (count === 2) {
+    return (
+      <div className="grid grid-cols-2 h-full w-full gap-0.5">
+        <img src={images[0]} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="" />
+        <img src={images[1]} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="" />
+      </div>
+    );
+  }
+
+  if (count === 3) {
+    return (
+      <div className="grid grid-cols-2 grid-rows-2 h-full w-full gap-0.5">
+        <div className="row-span-2 overflow-hidden">
+          <img src={images[0]} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="" />
+        </div>
+        <div className="overflow-hidden">
+          <img src={images[1]} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="" />
+        </div>
+        <div className="overflow-hidden">
+          <img src={images[2]} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="" />
+        </div>
+      </div>
+    );
+  }
+
+  // 4 ou mais imagens (Esquadrilha completa)
+  return (
+    <div className="grid grid-cols-2 grid-rows-2 h-full w-full gap-0.5">
+      {images.slice(0, 4).map((img, i) => (
+        <div key={i} className="overflow-hidden relative">
+          <img
+            src={img}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            alt=""
+          />
+          {i === 3 && count > 4 && (
+            <div className="absolute inset-0 bg-black/60 flex items-center justify-center backdrop-blur-[2px]">
+              <span className="text-white font-bold text-xs">+{count - 4}</span>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const ProjectCard = ({ project }: { project: Project }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
-
-  const coverIdx = project.coverIndex ?? 0;
 
   const nextImg = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -105,14 +155,18 @@ const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <div className="group relative aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer bg-muted/20 border border-white/10 hover:border-primary/50 transition-all duration-500">
-          <img
-            src={project.images[coverIdx]}
-            alt={project.folderName}
-            loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+        <div className="group relative aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer bg-muted/20 border border-white/10 hover:border-primary/50 transition-all duration-500 shadow-2xl">
+          <div className="w-full h-full">
+            <ProjectSquadron images={project.images} />
+          </div>
+          
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
+
+          {/* Overlay de Título */}
+          <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+            <p className="text-[10px] text-primary font-bold tracking-widest uppercase mb-1">Ver Projeto</p>
+            <h4 className="text-white text-xs font-bold truncate">{project.folderName}</h4>
+          </div>
 
           <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="p-2 bg-black/40 backdrop-blur-md rounded-full border border-white/20">
@@ -212,23 +266,13 @@ const PortfolioSection = () => {
                 </div>
               </div>
 
-              <Carousel
-                opts={{ align: "start", loop: true }}
-                plugins={[Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: false })]}
-                className="w-full relative"
-              >
-                <CarouselContent className="-ml-2 md:-ml-4">
-                  {category.items.map(project => (
-                    <CarouselItem key={project.id} className="pl-2 md:pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-                      <ProjectCard project={project} />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <div className="flex justify-end gap-3 mt-8 md:absolute md:-top-16 md:right-0">
-                  <CarouselPrevious className="static translate-y-0 h-10 w-10 border-white/10 bg-muted/40 hover:bg-primary hover:text-white transition-all shadow-lg" />
-                  <CarouselNext className="static translate-y-0 h-10 w-10 border-white/10 bg-muted/40 hover:bg-primary hover:text-white transition-all shadow-lg" />
-                </div>
-              </Carousel>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                {category.items.map(project => (
+                  <div key={project.id} className="w-full">
+                    <ProjectCard project={project} />
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
